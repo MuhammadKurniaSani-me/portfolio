@@ -1,261 +1,609 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: '#3b82f6', // You can change your primary color here
-                    }
-                }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            brand: "#3b82f6", // You can change your primary color here
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            /* Simple animation classes */
+            .fade-in-section {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                will-change: opacity, visibility;
             }
-        }
-    </script>
-    <style>
-        /* Simple animation classes */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            will-change: opacity, visibility;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-    </style>
-</head>
-<body class="bg-gray-900 text-gray-100 font-sans antialiased leading-relaxed">
+            .fade-in-section.is-visible {
+                opacity: 1;
+                transform: none;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-gray-900 text-gray-100 font-sans antialiased leading-relaxed"
+    >
+        <nav
+            class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800"
+        >
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between items-center h-16">
+                    <a
+                        href="#home"
+                        class="text-xl font-bold text-brand hover:text-white transition"
+                        >Portfolio.</a
+                    >
 
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <a href="#home" class="text-xl font-bold text-brand hover:text-white transition">Portfolio.</a>
-
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-brand transition">Home</a>
-                    <a href="#about" class="hover:text-brand transition">About</a>
-                    <a href="#projects" class="hover:text-brand transition">Projects</a>
-                    <a href="#contact" class="hover:text-brand transition">Contact</a>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="outline-none mobile-menu-button">
-                        <svg class="w-6 h-6 text-gray-300 hover:text-brand" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
-            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
-        </div>
-    </nav>
-
-    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
-        <div class="text-center px-4 fade-in-section">
-            <h2 class="text-brand font-semibold tracking-wide uppercase">Web Developer</h2>
-            <h1 class="mt-4 text-5xl md:text-7xl font-bold text-white mb-6">
-                Building Digital <span class="text-brand">Experiences</span>
-            </h1>
-            <p class="mt-4 text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-                I craft responsive, high-performance web applications using modern technologies.
-            </p>
-            <a href="#projects" class="bg-brand hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg shadow-blue-500/30">
-                View My Work
-            </a>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="max-w-6xl mx-auto px-4 fade-in-section">
-            <h2 class="text-3xl font-bold text-white mb-8 border-b-2 border-brand inline-block pb-2">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div class="order-2 md:order-1">
-                    <p class="text-gray-300 mb-4">
-                        Hello! I'm a passionate developer focused on creating clean, user-friendly experiences. I specialize in building flexible web applications.
-                    </p>
-                    <p class="text-gray-300 mb-6">
-                        I believe that great code is not just about function, but about structure and maintainability. When I'm not coding, you can find me exploring new tech stacks or contributing to open source.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-brand">HTML5</span>
-                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-brand">TailwindCSS</span>
-                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-brand">JavaScript</span>
-                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-brand">Git</span>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="hover:text-brand transition"
+                            >Home</a
+                        >
+                        <a href="#about" class="hover:text-brand transition"
+                            >About</a
+                        >
+                        <a href="#projects" class="hover:text-brand transition"
+                            >Projects</a
+                        >
+                        <a href="#contact" class="hover:text-brand transition"
+                            >Contact</a
+                        >
                     </div>
-                </div>
-                <div class="order-1 md:order-2 flex justify-center">
-                    <div class="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center border-4 border-brand shadow-xl overflow-hidden relative">
-                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" class="w-full h-full object-cover">
+
+                    <div class="md:hidden flex items-center">
+                        <button
+                            id="mobile-menu-btn"
+                            class="outline-none mobile-menu-button"
+                        >
+                            <svg
+                                class="w-6 h-6 text-gray-300 hover:text-brand"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-white mb-12 border-b-2 border-brand inline-block pb-2">My Live Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section">
-                    <div class="relative w-full h-64 overflow-hidden bg-gray-100 group">
-                        <iframe 
-                            src="https://muhammadkurniasani-me.github.io/Sunbox.github.io/#" 
-                            title="Sunbox"
-                            loading="lazy"
-                            class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
-                            scrolling="no">
-                        </iframe>
-                        <a href="https://muhammadkurniasani-me.github.io/Sunbox.github.io/#" target="_blank" class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"></a>
-                    </div>
-                    
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl mb-2 text-white">Sunbox</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">A dedicated project page hosted on GitHub.</p>
-                        <a href="https://muhammadkurniasani-me.github.io/Sunbox.github.io/#" target="_blank" class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium">
-                            Visit Website &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section">
-                    <div class="relative w-full h-64 overflow-hidden bg-gray-100 group">
-                        <iframe 
-                            src="https://muhammadkurniasani-me.github.io/twentyjapaneseclub.github.io/index.html" 
-                            title="Twenty Japanese Club"
-                            loading="lazy"
-                            class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
-                            scrolling="no">
-                        </iframe>
-                        <a href="https://muhammadkurniasani-me.github.io/twentyjapaneseclub.github.io/index.html" target="_blank" class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"></a>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl mb-2 text-white">Twenty Japanese Club</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">Japanese culture club landing page.</p>
-                        <a href="https://muhammadkurniasani-me.github.io/twentyjapaneseclub.github.io/index.html" target="_blank" class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium">
-                            Visit Website &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section">
-                    <div class="relative w-full h-64 overflow-hidden bg-gray-100 group">
-                        <iframe 
-                            src="https://muhammadkurniasani-me.github.io/datamining/intro.html" 
-                            title="Data Mining"
-                            loading="lazy"
-                            class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
-                            scrolling="no">
-                        </iframe>
-                        <a href="https://muhammadkurniasani-me.github.io/datamining/intro.html" target="_blank" class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"></a>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl mb-2 text-white">Data Mining Intro</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">Educational page about data mining concepts.</p>
-                        <a href="https://muhammadkurniasani-me.github.io/datamining/intro.html" target="_blank" class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium">
-                            Visit Website &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section">
-                    <div class="relative w-full h-64 overflow-hidden bg-black group">
-                        <iframe 
-                            src="https://muhammadkurniasani-me.github.io/solar_system_animation.github.io/" 
-                            title="Solar System"
-                            loading="lazy"
-                            class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
-                            scrolling="no">
-                        </iframe>
-                        <a href="https://muhammadkurniasani-me.github.io/solar_system_animation.github.io/" target="_blank" class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"></a>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl mb-2 text-white">Solar System 3D</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">Animated solar system visualization.</p>
-                        <a href="https://muhammadkurniasani-me.github.io/solar_system_animation.github.io/" target="_blank" class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium">
-                            Visit Website &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section">
-                    <div class="relative w-full h-64 overflow-hidden bg-gray-100 group">
-                        <iframe 
-                            src="https://muhammadkurniasani-me.github.io/pedulisehati.github.io/" 
-                            title="Peduli Sehati"
-                            loading="lazy"
-                            class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
-                            scrolling="no">
-                        </iframe>
-                        <a href="https://muhammadkurniasani-me.github.io/pedulisehati.github.io/" target="_blank" class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"></a>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-bold text-xl mb-2 text-white">Peduli Sehati</h3>
-                        <p class="text-gray-400 text-sm mb-4 flex-grow">Healthcare and wellness platform.</p>
-                        <a href="https://muhammadkurniasani-me.github.io/pedulisehati.github.io/" target="_blank" class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium">
-                            Visit Website &rarr;
-                        </a>
-                    </div>
-                </div>
-                
-                </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4 text-center fade-in-section">
-            <h2 class="text-3xl font-bold text-white mb-8">Get In Touch</h2>
-            <p class="text-gray-400 mb-8">
-                I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-            </p>
-            
-            <div class="bg-gray-900 p-8 rounded-lg shadow-xl max-w-lg mx-auto text-left">
-                <form id="contactForm">
-                    <div class="mb-4">
-                        <label class="block text-gray-300 text-sm font-bold mb-2" for="name">Name</label>
-                        <input class="w-full px-3 py-2 text-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-brand" id="name" type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-300 text-sm font-bold mb-2" for="email">Email</label>
-                        <input class="w-full px-3 py-2 text-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-brand" id="email" type="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-300 text-sm font-bold mb-2" for="message">Message</label>
-                        <textarea class="w-full px-3 py-2 text-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-brand" id="message" rows="4" placeholder="Hello there..." required></textarea>
-                    </div>
-                    <button class="w-full bg-brand hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300" type="submit">
-                        Send Message
-                    </button>
-                </form>
+            <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+                <a
+                    href="#home"
+                    class="block py-2 px-4 text-sm hover:bg-gray-700"
+                    >Home</a
+                >
+                <a
+                    href="#about"
+                    class="block py-2 px-4 text-sm hover:bg-gray-700"
+                    >About</a
+                >
+                <a
+                    href="#projects"
+                    class="block py-2 px-4 text-sm hover:bg-gray-700"
+                    >Projects</a
+                >
+                <a
+                    href="#contact"
+                    class="block py-2 px-4 text-sm hover:bg-gray-700"
+                    >Contact</a
+                >
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <footer class="bg-gray-900 border-t border-gray-800 py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
-            <p>&copy; <span id="year"></span> Muhammad Kurnia Sani. All rights reserved.</p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="hover:text-brand transition">GitHub</a>
-                <a href="#" class="hover:text-brand transition">LinkedIn</a>
-                <a href="#" class="hover:text-brand transition">Twitter</a>
+        <section
+            id="home"
+            class="min-h-screen flex items-center justify-center pt-16"
+        >
+            <div class="text-center px-4 fade-in-section">
+                <h2 class="text-brand font-semibold tracking-wide uppercase">
+                    Web Developer
+                </h2>
+                <h1 class="mt-4 text-5xl md:text-7xl font-bold text-white mb-6">
+                    Building Digital <span class="text-brand">Experiences</span>
+                </h1>
+                <p class="mt-4 text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                    I craft responsive, high-performance web applications using
+                    modern technologies.
+                </p>
+                <a
+                    href="#projects"
+                    class="bg-brand hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg shadow-blue-500/30"
+                >
+                    View My Work
+                </a>
             </div>
-        </div>
-    </footer>
+        </section>
 
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="max-w-6xl mx-auto px-4 fade-in-section">
+                <h2
+                    class="text-3xl font-bold text-white mb-8 border-b-2 border-brand inline-block pb-2"
+                >
+                    About Me
+                </h2>
 
-<script src="script.js" defer></script>
-</body>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                    <div class="order-2 md:order-1">
+                        <p class="text-gray-300 mb-4 text-lg leading-relaxed">
+                            As a
+                            <span class="text-white font-semibold"
+                                >2025 Informatics Engineering graduate</span
+                            >, I bridge the gap between complex data and
+                            business results. I specialize in data processing,
+                            recently implementing an
+                            <strong>Air Quality Forecasting application</strong>
+                            using Python and Streamlit for my thesis.
+                        </p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            My background blends technical expertise with
+                            <span class="text-white font-semibold"
+                                >Digital Marketing</span
+                            >, contributing to over
+                            <span class="text-brand font-bold"
+                                >IDR 66 Million</span
+                            >
+                            in sales. With certifications from
+                            <strong>AWS & Dicoding</strong> and English
+                            proficiency (EF SET B2), I am confident in
+                            translating complex logic into implementable designs
+                            and clear stakeholder insights.
+                        </p>
+
+                        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <h3
+                                    class="text-white font-bold mb-3 flex items-center"
+                                >
+                                    <svg
+                                        class="w-5 h-5 mr-2 text-brand"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                        ></path>
+                                    </svg>
+                                    Hard Skills
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-gray-700 rounded text-sm text-gray-300"
+                                        >Python & Streamlit</span
+                                    >
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-gray-700 rounded text-sm text-gray-300"
+                                        >Data Processing</span
+                                    >
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-gray-700 rounded text-sm text-gray-300"
+                                        >AI & Web (AWS/Dicoding)</span
+                                    >
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-gray-700 rounded text-sm text-gray-300"
+                                        >Digital Marketing</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3
+                                    class="text-white font-bold mb-3 flex items-center"
+                                >
+                                    <svg
+                                        class="w-5 h-5 mr-2 text-brand"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"
+                                        ></path>
+                                    </svg>
+                                    Soft Skills
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-brand/30 rounded text-sm text-brand"
+                                        >Business Target Achievement</span
+                                    >
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-brand/30 rounded text-sm text-brand"
+                                        >Communication (B2)</span
+                                    >
+                                    <span
+                                        class="px-3 py-1 bg-gray-900 border border-brand/30 rounded text-sm text-brand"
+                                        >Problem Solving</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <div
+                            class="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center border-4 border-brand shadow-xl overflow-hidden relative group"
+                        >
+                            <img
+                                src="./asset/images/for-web.webp"
+                                alt="Muhammad Kurnia Sani"
+                                class="w-full h-full object-cover transition transform group-hover:scale-110 duration-500"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2
+                    class="text-3xl font-bold text-white mb-12 border-b-2 border-brand inline-block pb-2"
+                >
+                    My Live Projects
+                </h2>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    <div
+                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section"
+                    >
+                        <div
+                            class="relative w-full h-64 overflow-hidden bg-gray-100 group"
+                        >
+                            <iframe
+                                src="https://muhammadkurniasani-me.github.io/Sunbox.github.io/#"
+                                title="Sunbox"
+                                loading="lazy"
+                                class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
+                                scrolling="no"
+                            >
+                            </iframe>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/Sunbox.github.io/#"
+                                target="_blank"
+                                class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"
+                            ></a>
+                        </div>
+
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl mb-2 text-white">
+                                Sunbox
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-grow">
+                                A dedicated project page hosted on GitHub.
+                            </p>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/Sunbox.github.io/#"
+                                target="_blank"
+                                class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium"
+                            >
+                                Visit Website &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section"
+                    >
+                        <div
+                            class="relative w-full h-64 overflow-hidden bg-gray-100 group"
+                        >
+                            <iframe
+                                src="https://muhammadkurniasani-me.github.io/twentyjapaneseclub.github.io/index.html"
+                                title="Twenty Japanese Club"
+                                loading="lazy"
+                                class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
+                                scrolling="no"
+                            >
+                            </iframe>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/twentyjapaneseclub.github.io/index.html"
+                                target="_blank"
+                                class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"
+                            ></a>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl mb-2 text-white">
+                                Twenty Japanese Club
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-grow">
+                                Japanese culture club landing page.
+                            </p>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/twentyjapaneseclub.github.io/index.html"
+                                target="_blank"
+                                class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium"
+                            >
+                                Visit Website &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section"
+                    >
+                        <div
+                            class="relative w-full h-64 overflow-hidden bg-gray-100 group"
+                        >
+                            <iframe
+                                src="https://muhammadkurniasani-me.github.io/datamining/intro.html"
+                                title="Data Mining"
+                                loading="lazy"
+                                class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
+                                scrolling="no"
+                            >
+                            </iframe>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/datamining/intro.html"
+                                target="_blank"
+                                class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"
+                            ></a>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl mb-2 text-white">
+                                Data Mining Intro
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-grow">
+                                Educational page about data mining concepts.
+                            </p>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/datamining/intro.html"
+                                target="_blank"
+                                class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium"
+                            >
+                                Visit Website &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section"
+                    >
+                        <div
+                            class="relative w-full h-64 overflow-hidden bg-black group"
+                        >
+                            <iframe
+                                src="https://muhammadkurniasani-me.github.io/solar_system_animation.github.io/"
+                                title="Solar System"
+                                loading="lazy"
+                                class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
+                                scrolling="no"
+                            >
+                            </iframe>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/solar_system_animation.github.io/"
+                                target="_blank"
+                                class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"
+                            ></a>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl mb-2 text-white">
+                                Solar System 3D
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-grow">
+                                Animated solar system visualization.
+                            </p>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/solar_system_animation.github.io/"
+                                target="_blank"
+                                class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium"
+                            >
+                                Visit Website &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section"
+                    >
+                        <div
+                            class="relative w-full h-64 overflow-hidden bg-gray-100 group"
+                        >
+                            <iframe
+                                src="https://muhammadkurniasani-me.github.io/pedulisehati.github.io/"
+                                title="Peduli Sehati"
+                                loading="lazy"
+                                class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
+                                scrolling="no"
+                            >
+                            </iframe>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/pedulisehati.github.io/"
+                                target="_blank"
+                                class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"
+                            ></a>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl mb-2 text-white">
+                                Peduli Sehati
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-grow">
+                                Healthcare and wellness platform.
+                            </p>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/pedulisehati.github.io/"
+                                target="_blank"
+                                class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium"
+                            >
+                                Visit Website &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 border border-gray-700 flex flex-col fade-in-section"
+                    >
+                        <div
+                            class="relative w-full h-64 overflow-hidden bg-gray-100 group"
+                        >
+                            <iframe
+                                src="https://muhammadkurniasani-me.github.io/machine_learning/"
+                                title="Machine Learning"
+                                loading="lazy"
+                                class="w-[200%] h-[200%] origin-top-left transform scale-50 pointer-events-none border-0"
+                                scrolling="no"
+                            >
+                            </iframe>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/machine_learning/"
+                                target="_blank"
+                                class="absolute inset-0 bg-black/0 hover:bg-black/10 transition z-10 block"
+                            ></a>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl mb-2 text-white">
+                                Machine Learning
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4 flex-grow">
+                                Repository of machine learning projects and
+                                experiments.
+                            </p>
+                            <a
+                                href="https://muhammadkurniasani-me.github.io/machine_learning/intro.html"
+                                target="_blank"
+                                class="w-full text-center bg-gray-700 hover:bg-brand text-white py-2 rounded transition font-medium"
+                            >
+                                Visit Website &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-800">
+            <div class="max-w-4xl mx-auto px-4 text-center fade-in-section">
+                <h2 class="text-3xl font-bold text-white mb-8">Get In Touch</h2>
+                <p class="text-gray-400 mb-8">
+                    I'm currently open to new opportunities. Whether you have a
+                    question or just want to say hi, I'll try my best to get
+                    back to you!
+                </p>
+
+                <div
+                    class="bg-gray-900 p-8 rounded-lg shadow-xl max-w-lg mx-auto text-left"
+                >
+                    <form
+                        id="contactForm"
+                        action="https://formspree.io/f/xlgdbkbr"
+                        method="POST"
+                    >
+                        <div class="mb-4">
+                            <label
+                                class="block text-gray-300 text-sm font-bold mb-2"
+                                for="name"
+                                >Name</label
+                            >
+                            <input
+                                name="name"
+                                class="w-full px-3 py-2 text-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-brand"
+                                id="name"
+                                type="text"
+                                placeholder="Your Name"
+                                required
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <label
+                                class="block text-gray-300 text-sm font-bold mb-2"
+                                for="email"
+                                >Email</label
+                            >
+                            <input
+                                name="email"
+                                class="w-full px-3 py-2 text-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-brand"
+                                id="email"
+                                type="email"
+                                placeholder="your@email.com"
+                                required
+                            />
+                        </div>
+                        <div class="mb-6">
+                            <label
+                                class="block text-gray-300 text-sm font-bold mb-2"
+                                for="message"
+                                >Message</label
+                            >
+                            <textarea
+                                name="message"
+                                class="w-full px-3 py-2 text-gray-900 rounded focus:outline-none focus:ring-2 focus:ring-brand"
+                                id="message"
+                                rows="4"
+                                placeholder="Hello there..."
+                                required
+                            ></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-brand hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            type="submit"
+                        >
+                            Send Message
+                        </button>
+                        <p
+                            id="form-status"
+                            class="mt-4 text-center text-sm hidden"
+                        ></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-gray-900 border-t border-gray-800 py-8">
+            <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+                <p>
+                    &copy; <span id="year"></span> Muhammad Kurnia Sani. All
+                    rights reserved.
+                </p>
+                <div class="mt-4 space-x-4">
+                    <a
+                        href="https://github.com/MuhammadKurniaSani-me"
+                        class="hover:text-brand transition"
+                        target="_blank"
+                        >GitHub</a
+                    >
+                    <a
+                        href="https://www.linkedin.com/in/muhammad-kurnia-sani-27b521218/"
+                        class="hover:text-brand transition"
+                        target="_blank"
+                        >LinkedIn</a
+                    >
+                    <a
+                        href="https://x.com/KurniaSuni"
+                        class="hover:text-brand transition"
+                        target="_blank"
+                        >Twitter</a
+                    >
+                    <a
+                        href="https://www.instagram.com/sani2342.me/"
+                        class="hover:text-brand transition"
+                        target="_blank"
+                        >Instagram</a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js" defer></script>
+    </body>
 </html>

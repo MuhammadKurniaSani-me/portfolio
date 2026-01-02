@@ -57,26 +57,59 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // 5. Contact Form Handler (Simulation)
+    // 5. Real Contact Form Handler (Formspree + AJAX)
     const contactForm = document.getElementById('contactForm');
+    const statusMsg = document.getElementById('form-status');
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            
             const btn = this.querySelector('button');
             const originalText = btn.innerText;
-            
+            const data = new FormData(this);
+
+            // UI Loading State
             btn.innerText = 'Sending...';
             btn.classList.add('opacity-75', 'cursor-not-allowed');
-            
-            setTimeout(() => {
-                alert('Thank you! This is a demo form. To make it real, use a service like Formspree.');
-                btn.innerText = 'Sent!';
-                this.reset();
+            btn.disabled = true;
+
+            try {
+                // Send data to Formspree
+                const response = await fetch(this.action, {
+                    method: this.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success
+                    statusMsg.textContent = "Thanks for your message! I'll get back to you soon.";
+                    statusMsg.className = "mt-4 text-center text-sm text-green-400 block";
+                    this.reset(); // Clear the inputs
+                } else {
+                    // Error from server
+                    const result = await response.json();
+                    statusMsg.textContent = result.errors ? result.errors.map(error => error.message).join(', ') : "Oops! There was a problem sending your form.";
+                    statusMsg.className = "mt-4 text-center text-sm text-red-400 block";
+                }
+            } catch (error) {
+                // Network Error
+                statusMsg.textContent = "Oops! There was a problem sending your form.";
+                statusMsg.className = "mt-4 text-center text-sm text-red-400 block";
+            } finally {
+                // Reset Button State
+                btn.innerText = originalText;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                btn.disabled = false;
+                
+                // Hide success message after 5 seconds
                 setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.classList.remove('opacity-75', 'cursor-not-allowed');
-                }, 2000);
-            }, 1000);
+                    statusMsg.classList.add('hidden');
+                }, 5000);
+            }
         });
     }
 });
