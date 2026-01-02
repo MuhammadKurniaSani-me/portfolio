@@ -6,8 +6,7 @@ Designed with performance and simplicity in mind, this project uses **HTML5**, *
 
 ## 🚀 Live Demo
 
-**[View Live Portfolio](https://muhammadkurniasani-me.github.io/YOUR-REPO-NAME)**
-*(Replace `YOUR-REPO-NAME` with your actual repository name after deployment)*
+**[View Live Portfolio](https://muhammadkurniasani-me.github.io/portfolio)**
 
 ## ✨ Key Features
 
@@ -40,50 +39,7 @@ That is the final piece of the puzzle! A great `README.md` is what separates a "
 
 Since I know your name is **Muhammad Kurnia Sani** and your GitHub username is **muhammadkurniasani-me** (based on the links you provided), I have personalized this README for you.
 
-Create a file named `README.md` in your folder and paste this code in.
-
 ---
-
-```markdown
-# Personal Portfolio Website
-
-A lightweight, responsive, Single Page Application (SPA) portfolio built to showcase web development projects. 
-
-Designed with performance and simplicity in mind, this project uses **HTML5**, **Vanilla JavaScript**, and **TailwindCSS** (via CDN). It requires no complex build steps or package managers, making it instantly deployable to GitHub Pages.
-
-## 🚀 Live Demo
-
-**[View Live Portfolio](https://muhammadkurniasani-me.github.io/YOUR-REPO-NAME)**
-*(Replace `YOUR-REPO-NAME` with your actual repository name after deployment)*
-
-## ✨ Key Features
-
-* **⚡ Zero-Build Setup**: No `npm install` or `webpack` required. Just standard browser technologies.
-* **🎨 Rapid Styling**: Styled using TailwindCSS via CDN for immediate visual feedback.
-* **📱 Fully Responsive**: Mobile-first design with a custom toggleable navigation menu.
-* **🎞️ Live Project Previews**: distinctive "Zoomed-Out" iframe previews that allow users to see live sites without leaving the portfolio.
-* **✨ Smooth Animations**: 
-    * Intersection Observer for "fade-in on scroll" effects.
-    * Smooth scrolling navigation.
-    * Hover effects on project cards.
-* **🌑 Dark Mode**: Built with a modern dark theme using Slate/Gray color palettes.
-
-## 🛠️ Tech Stack
-
-* **Structure**: HTML5 (Semantic)
-* **Styling**: TailwindCSS (CDN Script)
-* **Logic**: Vanilla JavaScript (ES6+)
-* **Hosting**: GitHub Pages
-
-## 📂 Project Structure
-
-```text
-/
-├── index.html      # The main entry point containing structure, styles, and logic
-├── README.md       # Project documentation
-└── assets/         # (Optional) Folder for local images like profile.jpg
-
-```
 
 ## 🚀 How to Run Locally
 
@@ -146,19 +102,8 @@ The project cards use a CSS trick to make iframes look like high-quality thumbna
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
+This project is open source and available under the MIT License.
 
 ---
 
 Built by **Muhammad Kurnia Sani**
-
-```
-
-### Senior Developer Tip:
-The section in the README called **"Managing Iframe Previews"** is important. When recruiters look at your code, they might wonder, *"Why did he set the width to 200%?"*
-
-By explaining that it's a technique to simulate a desktop thumbnail (the "Zoom Out" effect), you show that you understand **CSS transforms** and **User Experience (UX)** deeply. It turns a "hack" into a "feature."
-
-**Would you like me to help you draft the "About Me" content in the HTML to better highlight your specific skills in Machine Learning and Web Development?**
-
-```
