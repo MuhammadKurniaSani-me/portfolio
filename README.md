@@ -6,7 +6,7 @@ Designed with performance and simplicity in mind, this project uses **HTML5**, *
 
 ## 🚀 Live Demo
 
-**[View Live Portfolio](https://muhammadkurniasani-me.github.io/portfolio)**
+**[View Live Portfolio Here](https://muhammadkurniasani-me.github.io/portfolio)**
 
 ## ✨ Key Features
 
