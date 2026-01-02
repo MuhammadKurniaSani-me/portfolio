@@ -36,8 +36,6 @@ Designed with performance and simplicity in mind, this project uses **HTML5**, *
 └── assets/         # (Optional) Folder for local images like profile.jpg
 ```
 
-That is the final piece of the puzzle! A great `README.md` is what separates a "code dump" from a "professional project." It tells recruiters and other developers exactly what you built, how it works, and how to run it.
-
 ---
 
 ## 🚀 How to Run Locally
