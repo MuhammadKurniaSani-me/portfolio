@@ -67,19 +67,30 @@ const {
                 class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-500"
             >
                 {
-                    profileData.socials.map((social) => (
-                        <li>
-                            <a
-                                href={social.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`Connect with me on ${social.name}`}
-                                class="hover:text-slate-900 transition-colors"
-                            >
-                                {social.name}
-                            </a>
-                        </li>
-                    ))
+                    profileData.socials.map((social) => {
+                        // 1. Extract the base domain (e.g., "github.com") from your full URL
+                        const domain = new URL(social.url).hostname;
+
+                        return (
+                            <li>
+                                <a
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Connect with me on ${social.name}`}
+                                    class="group flex items-center gap-2 hover:text-slate-900 transition-all"
+                                >
+                                    <img
+                                        src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
+                                        alt=""
+                                        class="w-4 h-4 opacity-75 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                                        aria-hidden="true"
+                                    />
+                                    {social.name}
+                                </a>
+                            </li>
+                        );
+                    })
                 }
             </ul>
 
