@@ -2,6 +2,7 @@
 // src/pages/index.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
 import experiences from "../data/experience.json";
+import profileData from "../data/profile.json";
 
 // 1. We strictly define the shape of our JSON data.
 // If you misspell a key in the JSON, TypeScript will throw an error here during build time.
@@ -17,14 +18,16 @@ interface Experience {
 const typedExperiences: Experience[] = experiences;
 ---
 
-<BaseLayout title="Kurnia Sani | Home" description="The personal portfolio of Kurnia Sani, a software engineer specializing in high-performance web applications and machine learning.">
+<BaseLayout
+    title="Kurnia Sani | Home"
+    description="The personal portfolio of Kurnia Sani, a software engineer specializing in high-performance web applications and machine learning."
+>
     <section class="mb-16">
         <h1 class="text-4xl font-extrabold tracking-tight mb-4">
-            Hi, I'm Sani.
+            {profileData.hero.headline}
         </h1>
         <p class="text-lg text-slate-600 leading-relaxed">
-            A software engineer focused on building clean, high-performance web
-            applications, machine learning integration, and robust automation.
+            {profileData.hero.bio}
         </p>
     </section>
 

@@ -1,0 +1,27 @@
+{
+    "seo": {
+        "defaultTitle": "Kurnia Sani | Software Engineer",
+        "defaultDescription": "Portfolio of Muhammad Kurnia Sani, an Informatics Engineering graduate specializing in high-performance web applications, machine learning, and clean architecture."
+    },
+    "hero": {
+        "name": "Kurnia",
+        "headline": "Hi, I'm Kurnia.",
+        "bio": "A software engineer focused on building clean, high-performance web applications, machine learning integration, and robust automation."
+    },
+    "socials": [
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/muhammad-kurnia-sani-27b521218/"
+        },
+        { "name": "GitHub", "url": "https://github.com/MuhammadKurniaSani-me" },
+        { "name": "X (Twitter)", "url": "https://x.com/KurniaSuni" },
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/sani2342.me/"
+        },
+        {
+            "name": "Facebook",
+            "url": "https://www.facebook.com/muhammad.k.sani.90/"
+        }
+    ]
+}

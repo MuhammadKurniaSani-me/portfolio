@@ -1,6 +1,7 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
 // src/layouts/BaseLayout.astro
+import profileData from "../data/profile.json";
 // The server-side code fence. We can define props here later if needed.
 
 interface Props {
@@ -8,7 +9,11 @@ interface Props {
     description?: string;
 }
 
-const { title = "Kurnia Sani | Portfolio", description = "Personal portfolio and projects of Muhammad Kurnia Sani." } = Astro.props;
+// We pull the defaults from JSON, but still allow individual pages to pass their own props!
+const {
+    title = profileData.seo.defaultTitle,
+    description = profileData.seo.defaultDescription,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -17,7 +22,15 @@ const { title = "Kurnia Sani | Portfolio", description = "Personal portfolio and
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <meta name="title" content={title} />
         <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://muhammadkurniasani-me.github.io/portfolio/"
+        />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <title>{title}</title>
     </head>
 
@@ -29,7 +42,7 @@ const { title = "Kurnia Sani | Portfolio", description = "Personal portfolio and
                 href="/portfolio/"
                 class="text-xl font-bold tracking-tight text-slate-800 hover:text-slate-500 transition-colors"
             >
-                Muhammad Kurnia Sani
+                {profileData.hero.name} Sani
             </a>
             <nav class="space-x-6 text-sm font-medium text-slate-600">
                 <a
@@ -50,7 +63,31 @@ const { title = "Kurnia Sani | Portfolio", description = "Personal portfolio and
         <footer
             class="mt-20 pt-8 border-t border-slate-200 text-sm text-slate-500 text-center"
         >
-            &copy; {new Date().getFullYear()} Muhammad Kurnia Sani. Built with Astro.
+            <ul
+                class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-500"
+            >
+                {
+                    profileData.socials.map((social) => (
+                        <li>
+                            <a
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Connect with me on ${social.name}`}
+                                class="hover:text-slate-900 transition-colors"
+                            >
+                                {social.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <div class="text-sm text-slate-400">
+                &copy; {new Date().getFullYear()} Muhammad {
+                    profileData.hero.name
+                } Sani. Built with Astro.
+            </div>
         </footer>
     </body>
 </html>
