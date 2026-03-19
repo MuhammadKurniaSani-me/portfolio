@@ -11,17 +11,28 @@
     "socials": [
         {
             "name": "LinkedIn",
-            "url": "https://www.linkedin.com/in/muhammad-kurnia-sani-27b521218/"
+            "url": "https://www.linkedin.com/...",
+            "icon": "simple-icons:linkedin"
         },
-        { "name": "GitHub", "url": "https://github.com/MuhammadKurniaSani-me" },
-        { "name": "X (Twitter)", "url": "https://x.com/KurniaSuni" },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/...",
+            "icon": "simple-icons:github"
+        },
+        {
+            "name": "X (Twitter)",
+            "url": "https://x.com/...",
+            "icon": "simple-icons:x"
+        },
         {
             "name": "Instagram",
-            "url": "https://www.instagram.com/sani2342.me/"
+            "url": "https://www.instagram.com/...",
+            "icon": "simple-icons:instagram"
         },
         {
             "name": "Facebook",
-            "url": "https://www.facebook.com/muhammad.k.sani.90/"
+            "url": "https://www.facebook.com/...",
+            "icon": "simple-icons:facebook"
         }
     ]
 }

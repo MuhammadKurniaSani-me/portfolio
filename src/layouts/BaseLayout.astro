@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-// src/layouts/BaseLayout.astro
+import { Icon } from "astro-icon/components";
 import profileData from "../data/profile.json";
 // The server-side code fence. We can define props here later if needed.
 
@@ -80,11 +80,9 @@ const {
                                     aria-label={`Connect with me on ${social.name}`}
                                     class="group flex items-center gap-2 hover:text-slate-900 transition-all"
                                 >
-                                    <img
-                                        src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
-                                        alt=""
-                                        class="w-4 h-4 opacity-75 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                                        aria-hidden="true"
+                                    <Icon
+                                        name={social.icon}
+                                        class="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors"
                                     />
                                     {social.name}
                                 </a>
