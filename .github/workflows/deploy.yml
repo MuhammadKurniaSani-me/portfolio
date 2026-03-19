@@ -23,7 +23,7 @@ jobs:
         uses: withastro/action@v2
         with:
           path: . # The root location of your Astro project
-          node-version: 20
+          node-version: 22
 
   deploy:
     needs: build
