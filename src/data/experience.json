@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "role": "Freelance Programmer",
+        "company": "PT. Techno International Mandira",
+        "duration": "2026 - Now",
+        "description": "Developed and maintained web applications, focusing on clean architecture and performance."
+    },
+    {
+        "id": "2",
+        "role": "Freelance Education Mentor",
+        "company": "Flashcom Indonesia",
+        "duration": "2025 - Now",
+        "description": "Mentored students in computer science fundamentals and guided them through technical projects via online/offline courses."
+    },
+    {
+        "id": "3",
+        "role": "Marketing",
+        "company": "CV Focus Alfasarana",
+        "duration": "2024 - Now",
+        "description": "Executed digital marketing campaigns via social media, email marketing, and content creation, online ads"
+    },
+    {
+        "id": "4",
+        "role": "IT Support",
+        "company": "CV Focus Alfasarana",
+        "duration": "2023 - Now",
+        "description": "Troubleshot hardware, software issues, and build company portfolio website for digital marketing, ensuring smooth daily operations for the team."
+    }
+]

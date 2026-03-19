@@ -1,0 +1,64 @@
+---
+// src/pages/projects.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import projectsData from "../data/projects.json";
+
+interface Project {
+    id: string;
+    title: string;
+    category: string;
+    description: string;
+    techStack: string[];
+    url: string;
+}
+
+const projects: Project[] = projectsData;
+---
+
+<BaseLayout title="Kurnia Sani | Projects" description="A collection of my machine learning models and web development builds.">
+    <section class="mb-12">
+        <h1 class="text-4xl font-extrabold tracking-tight mb-4 text-slate-900">
+            Projects
+        </h1>
+        <p class="text-lg text-slate-600">
+            A collection of my machine learning models and web development
+            builds.
+        </p>
+    </section>
+
+    <section class="space-y-8">
+        {
+            projects.map((project) => (
+                <article class="group border border-slate-200 rounded-2xl p-6 hover:border-slate-300 hover:shadow-sm transition-all bg-white relative">
+                    <div class="mb-3">
+                        <h2 class="text-xl font-bold text-slate-800 tracking-tight">
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-blue-600 transition-colors after:absolute after:inset-0"
+                            >
+                                {project.title} &rarr;
+                            </a>
+                        </h2>
+                        <div class="text-sm font-medium text-blue-600 mt-1">
+                            {project.category}
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        {project.description}
+                    </p>
+
+                    <ul class="flex flex-wrap gap-2 relative z-10">
+                        {project.techStack.map((tech) => (
+                            <li class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full">
+                                {tech}
+                            </li>
+                        ))}
+                    </ul>
+                </article>
+            ))
+        }
+    </section>
+</BaseLayout>

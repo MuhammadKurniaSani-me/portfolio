@@ -1,0 +1,56 @@
+---
+import '../styles/global.css'
+// src/layouts/BaseLayout.astro
+// The server-side code fence. We can define props here later if needed.
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title = "Kurnia Sani | Portfolio", description = "Personal portfolio and projects of Muhammad Kurnia Sani." } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <title>{title}</title>
+    </head>
+
+    <body
+        class="bg-slate-50 text-slate-900 font-sans antialiased max-w-3xl mx-auto px-6 py-12 flex flex-col min-h-screen"
+    >
+        <header class="mb-16 flex justify-between items-center">
+            <a
+                href="/portfolio/"
+                class="text-xl font-bold tracking-tight text-slate-800 hover:text-slate-500 transition-colors"
+            >
+                Muhammad Kurnia Sani
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-slate-600">
+                <a
+                    href="/portfolio/"
+                    class="hover:text-slate-900 transition-colors">Home</a
+                >
+                <a
+                    href="/portfolio/projects"
+                    class="hover:text-slate-900 transition-colors">Projects</a
+                >
+            </nav>
+        </header>
+
+        <main class="flex-grow">
+            <slot />
+        </main>
+
+        <footer
+            class="mt-20 pt-8 border-t border-slate-200 text-sm text-slate-500 text-center"
+        >
+            &copy; {new Date().getFullYear()} Muhammad Kurnia Sani. Built with Astro.
+        </footer>
+    </body>
+</html>

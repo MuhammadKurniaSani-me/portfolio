@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "title": "Beijing Weather Forecasting (ARIMA)",
+        "category": "Machine Learning / Skripsi",
+        "description": "An interactive web application predicting weather patterns and PM 2.5 levels in Beijing using an Improved ARIMA algorithm.",
+        "techStack": ["Python", "Streamlit", "Machine Learning"],
+        "url": "https://final-college-project-pezbvyfa5y62amudtfe5h7.streamlit.app"
+    },
+    {
+        "id": "2",
+        "title": "Peduli Sehati",
+        "category": "Front-End Web Development",
+        "description": "A responsive front-end web interface focused on UI/UX best practices and accessible design.",
+        "techStack": ["HTML", "CSS", "JavaScript"],
+        "url": "https://muhammadkurniasani-me.github.io/pedulisehati.github.io/"
+    },
+    {
+        "id": "3",
+        "title": "Data Mining & Machine Learning Architectures",
+        "category": "Data Science / Documentation",
+        "description": "Comprehensive, interactive documentation covering core concepts in data mining and machine learning models.",
+        "techStack": ["Jupyter", "Data Science", "Python"],
+        "url": "https://muhammadkurniasani-me.github.io/machine_learning/intro.html"
+    },
+    {
+        "id": "4",
+        "title": "Python Web Application",
+        "category": "Full-Stack Development",
+        "description": "A backend-driven web application hosted independently, handling routing and server-side logic.",
+        "techStack": ["Python", "Web Framework", "Deployment"],
+        "url": "https://muhammadkurniasani2342.pythonanywhere.com/"
+    },
+    {
+        "id": "5",
+        "title": "Sunbox & Twenty Japanese Club",
+        "category": "Front-End Web Development",
+        "description": "Exploratory front-end projects demonstrating layout control, styling, and static site deployment.",
+        "techStack": ["Web Design", "Static Hosting"],
+        "url": "https://muhammadkurniasani-me.github.io/Sunbox.github.io/#"
+    }
+]

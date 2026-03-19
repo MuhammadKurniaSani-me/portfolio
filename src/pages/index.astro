@@ -1,11 +1,54 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// src/pages/index.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import experiences from "../data/experience.json";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// 1. We strictly define the shape of our JSON data.
+// If you misspell a key in the JSON, TypeScript will throw an error here during build time.
+interface Experience {
+    id: string;
+    role: string;
+    company: string;
+    duration: string;
+    description: string;
+}
+
+// 2. We assert that our imported JSON matches this exact structure.
+const typedExperiences: Experience[] = experiences;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Kurnia Sani | Home" description="The personal portfolio of Kurnia Sani, a software engineer specializing in high-performance web applications and machine learning.">
+    <section class="mb-16">
+        <h1 class="text-4xl font-extrabold tracking-tight mb-4">
+            Hi, I'm Sani.
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed">
+            A software engineer focused on building clean, high-performance web
+            applications, machine learning integration, and robust automation.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-semibold mb-6 border-b border-slate-200 pb-2">
+            Experience
+        </h2>
+
+        <div class="space-y-8">
+            {
+                typedExperiences.map((job) => (
+                    <div class="group">
+                        <h3 class="text-lg font-medium text-slate-800">
+                            {job.role}
+                        </h3>
+                        <div class="text-sm text-slate-500 mb-2 font-mono">
+                            {job.company} &bull; {job.duration}
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            {job.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+</BaseLayout>
