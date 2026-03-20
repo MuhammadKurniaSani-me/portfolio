@@ -43,11 +43,11 @@ const {
         <header class="mb-16 flex justify-between items-center">
             <a
                 href="/portfolio/"
-                class="text-xl font-bold tracking-tight text-slate-800 hover:text-slate-500 transition-colors"
+                class="text-xl font-bold tracking-tight text-slate-800 hover:text-slate-500 transition-colors shrink-0"
             >
                 {profileData.hero.name} Sani
             </a>
-            <nav class="space-x-6 text-sm font-medium text-slate-600">
+            <nav class="flex items-center gap-4 sm:gap-6 space-x-6 text-sm font-medium text-slate-600">
                 <a
                     href="/portfolio/"
                     class="hover:text-slate-900 transition-colors">Home</a
@@ -56,13 +56,13 @@ const {
                     href="/portfolio/projects"
                     class="hover:text-slate-900 transition-colors">Projects</a
                 >
-                <div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
+                <div class="h-4 w-px bg-slate-200 hidden xs:block"></div>
 
                 <div class="flex items-center gap-4">
                     <a
                         href={`mailto:${profileData.contact.email}`}
                         title="Email Me"
-                        class="hover:text-blue-600 transition-colors"
+                        class="hover:text-[#EA4335] transition-colors leading-none"
                     >
                         <Icon name="simple-icons:gmail" class="w-5 h-5" />
                     </a>
@@ -70,7 +70,7 @@ const {
                         href={waUrl}
                         target="_blank"
                         title="WhatsApp Me"
-                        class="hover:text-green-600 transition-colors"
+                        class="hover:text-[#25D366] transition-colors leading-none"
                     >
                         <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
                     </a>
