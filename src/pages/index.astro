@@ -54,6 +54,30 @@ const typedExperiences: Experience[] = experiences;
     </section>
 
     <section class="mb-16">
+        <h2 class="text-2xl font-semibold mb-6 border-b border-slate-200 pb-2">
+            Experience
+        </h2>
+
+        <div class="space-y-8">
+            {
+                typedExperiences.map((job) => (
+                    <div class="group">
+                        <h3 class="text-lg font-medium text-slate-800">
+                            {job.role}
+                        </h3>
+                        <div class="text-sm text-slate-500 mb-2 font-mono">
+                            {job.company} &bull; {job.duration}
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            {job.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <section>
         <h2 class="text-2xl font-bold mb-6 text-slate-800 tracking-tight">
             Languages
         </h2>
@@ -73,30 +97,6 @@ const typedExperiences: Experience[] = experiences;
                                 {lang.score}
                             </p>
                         </div>
-                    </div>
-                ))
-            }
-        </div>
-    </section>
-
-    <section>
-        <h2 class="text-2xl font-semibold mb-6 border-b border-slate-200 pb-2">
-            Experience
-        </h2>
-
-        <div class="space-y-8">
-            {
-                typedExperiences.map((job) => (
-                    <div class="group">
-                        <h3 class="text-lg font-medium text-slate-800">
-                            {job.role}
-                        </h3>
-                        <div class="text-sm text-slate-500 mb-2 font-mono">
-                            {job.company} &bull; {job.duration}
-                        </div>
-                        <p class="text-slate-600 leading-relaxed">
-                            {job.description}
-                        </p>
                     </div>
                 ))
             }
