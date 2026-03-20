@@ -2,7 +2,9 @@
 // src/pages/index.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
 import experiences from "../data/experience.json";
+import { Image } from "astro:assets";
 import profileData from "../data/profile.json";
+import myPicture from "../assets/photo-profile.webp";
 
 // 1. We strictly define the shape of our JSON data.
 // If you misspell a key in the JSON, TypeScript will throw an error here during build time.
@@ -22,7 +24,16 @@ const typedExperiences: Experience[] = experiences;
     title="Kurnia Sani | Home"
     description="The personal portfolio of Kurnia Sani, a software engineer specializing in high-performance web applications and machine learning."
 >
-    <section class="mb-16">
+    <section class="mb-16 flex flex-col md:flex-row items-center gap-8">
+        <Image
+            src={myPicture}
+            alt="Muhammad Kurnia Sani"
+            width={150}
+            height={150}
+            loading="eager"
+            class="rounded-full grayscale hover:grayscale-0 transition-all duration-500 shadow-md"
+        />
+
         <h1 class="text-4xl font-extrabold tracking-tight mb-4">
             {profileData.hero.headline}
         </h1>

@@ -4,8 +4,9 @@
         "defaultDescription": "Portfolio of Muhammad Kurnia Sani, an Informatics Engineering graduate specializing in high-performance web applications, machine learning, and clean architecture."
     },
     "hero": {
-        "name": "Kurnia",
-        "headline": "Hi, I'm Kurnia.",
+        "name": "Sani",
+        "headline": "Hi, I'm Sani.",
+        "avatar": "../assets/photo-profile.webp",
         "bio": "A software engineer focused on building clean, high-performance web applications, machine learning integration, and robust automation."
     },
     "socials": [
