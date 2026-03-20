@@ -10,6 +10,11 @@
         "cvUrl": "/portfolio/CV_Muhammad_Kurnia_Sani.pdf",
         "bio": "A software engineer focused on building clean, high-performance web applications, machine learning integration, and robust automation."
     },
+    "contact": {
+        "email": "sani230402@gmail.com",
+        "whatsapp": "6289616384973",
+        "message": "Halo Sani, saya tertarik dengan portfolio Anda!"
+    },
     "socials": [
         {
             "name": "LinkedIn",

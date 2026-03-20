@@ -1,8 +1,11 @@
 ---
+// The server-side code fence. We can define props here later if needed.
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import profileData from "../data/profile.json";
-// The server-side code fence. We can define props here later if needed.
+
+// Create the WhatsApp URL with a pre-filled message
+const waUrl = `https://wa.me/${profileData.contact.whatsapp}?text=${encodeURIComponent(profileData.contact.message)}`;
 
 interface Props {
     title?: string;
@@ -53,6 +56,25 @@ const {
                     href="/portfolio/projects"
                     class="hover:text-slate-900 transition-colors">Projects</a
                 >
+                <div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
+
+                <div class="flex items-center gap-4">
+                    <a
+                        href={`mailto:${profileData.contact.email}`}
+                        title="Email Me"
+                        class="hover:text-blue-600 transition-colors"
+                    >
+                        <Icon name="simple-icons:gmail" class="w-5 h-5" />
+                    </a>
+                    <a
+                        href={waUrl}
+                        target="_blank"
+                        title="WhatsApp Me"
+                        class="hover:text-green-600 transition-colors"
+                    >
+                        <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
+                    </a>
+                </div>
             </nav>
         </header>
 
@@ -92,7 +114,9 @@ const {
                 }
             </ul>
 
-            <div class="text-xs tracking-wide text-slate-500 uppercase font-medium">
+            <div
+                class="text-xs tracking-wide text-slate-500 uppercase font-medium"
+            >
                 &copy; {new Date().getFullYear()} Muhammad {
                     profileData.hero.name
                 } Sani. Built with Astro.
