@@ -1,0 +1,26 @@
+[
+    {
+        "language": "English",
+        "level": "B2 Proficient",
+        "score": "EF SET Certification (2025)",
+        "icon": "circle-flags:uk"
+    },
+    {
+        "language": "German",
+        "level": "A1 Learner",
+        "score": "Actively Studying",
+        "icon": "circle-flags:de"
+    },
+    {
+        "language": "Indonesian",
+        "level": "Native",
+        "score": "First Language",
+        "icon": "circle-flags:id"
+    },
+    {
+        "language": "Japanese",
+        "level": "N5",
+        "score": "JLPT N5 Certification (2018)",
+        "icon": "circle-flags:jp"
+    }
+]

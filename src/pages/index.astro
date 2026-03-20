@@ -5,6 +5,7 @@ import experiences from "../data/experience.json";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import profileData from "../data/profile.json";
+import languages from "../data/languages.json";
 import myPicture from "../assets/photo-profile.webp";
 
 // 1. We strictly define the shape of our JSON data.
@@ -50,6 +51,32 @@ const typedExperiences: Experience[] = experiences;
             <Icon name="simple-icons:adobeacrobatreader" class="w-4 h-4" />
             Download CV
         </a>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-slate-800 tracking-tight">
+            Languages
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {
+                languages.map((lang) => (
+                    <div class="flex items-start gap-4 p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <Icon name={lang.icon} class="w-10 h-10 shrink-0" />
+                        <div>
+                            <h3 class="font-bold text-slate-900">
+                                {lang.language}
+                            </h3>
+                            <p class="text-sm font-semibold text-blue-600">
+                                {lang.level}
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                {lang.score}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
     </section>
 
     <section>
