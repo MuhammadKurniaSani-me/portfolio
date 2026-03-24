@@ -5,7 +5,8 @@
         "category": "Machine Learning / Skripsi",
         "description": "An interactive web application predicting weather patterns and PM 2.5 levels in Beijing using an Improved ARIMA algorithm.",
         "techStack": ["Python", "Streamlit", "Machine Learning"],
-        "url": "https://final-college-project-pezbvyfa5y62amudtfe5h7.streamlit.app"
+        "url": "https://final-college-project-pezbvyfa5y62amudtfe5h7.streamlit.app",
+        "gradient": "from-blue-600 to-indigo-900"
     },
     {
         "id": "2",
@@ -13,7 +14,8 @@
         "category": "Front-End Web Development",
         "description": "A responsive front-end web interface focused on UI/UX best practices and accessible design.",
         "techStack": ["HTML", "CSS", "JavaScript"],
-        "url": "https://muhammadkurniasani-me.github.io/pedulisehati.github.io/"
+        "url": "https://muhammadkurniasani-me.github.io/pedulisehati.github.io/",
+        "gradient": "from-emerald-500 to-teal-700"
     },
     {
         "id": "3",
@@ -21,7 +23,8 @@
         "category": "Data Science / Documentation",
         "description": "Comprehensive, interactive documentation covering core concepts in data mining and machine learning models.",
         "techStack": ["Jupyter", "Data Science", "Python"],
-        "url": "https://muhammadkurniasani-me.github.io/machine_learning/intro.html"
+        "url": "https://muhammadkurniasani-me.github.io/machine_learning/intro.html",
+        "gradient": "from-purple-600 to-fuchsia-900"
     },
     {
         "id": "4",
@@ -29,7 +32,8 @@
         "category": "Full-Stack Development",
         "description": "A backend-driven web application hosted independently, handling routing and server-side logic.",
         "techStack": ["Python", "Web Framework", "Deployment"],
-        "url": "https://muhammadkurniasani2342.pythonanywhere.com/"
+        "url": "https://muhammadkurniasani2342.pythonanywhere.com/",
+        "gradient": "from-slate-700 to-slate-900"
     },
     {
         "id": "5",
@@ -37,6 +41,7 @@
         "category": "Front-End Web Development",
         "description": "Exploratory front-end projects demonstrating layout control, styling, and static site deployment.",
         "techStack": ["Web Design", "Static Hosting"],
-        "url": "https://muhammadkurniasani-me.github.io/Sunbox.github.io/#"
+        "url": "https://muhammadkurniasani-me.github.io/Sunbox.github.io/#",
+        "gradient": "from-orange-500 to-rose-700"
     }
 ]

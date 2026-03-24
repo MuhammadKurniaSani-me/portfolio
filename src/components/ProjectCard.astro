@@ -4,7 +4,7 @@ const { title, tags, gradient = "from-slate-900 to-slate-700" } = Astro.props;
 ---
 
 <div
-    class={`relative aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between group cursor-pointer border border-slate-200/50 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1`}
+    class={`relative aspect-video w-full overflow-hidden rounded-xl bg-linear-to-br ${gradient} p-6 flex flex-col justify-between group cursor-pointer border border-slate-200/50 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1`}
 >
     <div
         class="absolute -right-4 -top-4 h-32 w-32 rounded-full bg-white/10 blur-2xl group-hover:bg-white/20 transition-colors"
