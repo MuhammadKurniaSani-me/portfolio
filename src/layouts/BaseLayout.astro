@@ -34,6 +34,13 @@ const {
         />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta
+            property="og:image"
+            content="https://muhammadkurniasani-me.github.io/portfolio/og-image.jpg"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Kurnia Sani | Portfolio" />
+        
         <title>{title}</title>
     </head>
 
@@ -47,7 +54,9 @@ const {
             >
                 {profileData.hero.name}
             </a>
-            <nav class="flex items-center gap-4 sm:gap-6 space-x-6 text-sm font-medium text-slate-600">
+            <nav
+                class="flex items-center gap-4 sm:gap-6 space-x-6 text-sm font-medium text-slate-600"
+            >
                 <a
                     href="/portfolio/"
                     class="hover:text-slate-900 transition-colors">Home</a
