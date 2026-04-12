@@ -3,9 +3,7 @@
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import profileData from "../data/profile.json";
-
-// Create the WhatsApp URL with a pre-filled message
-const waUrl = `https://wa.me/${profileData.contact.whatsapp}?text=${encodeURIComponent(profileData.contact.message)}`;
+import Header from "../components/Header.astro";
 
 interface Props {
     title?: string;
@@ -46,50 +44,7 @@ const {
     <body
         class="bg-slate-50 text-slate-900 font-sans antialiased max-w-3xl mx-auto px-6 py-12 flex flex-col min-h-screen"
     >
-        <header class="mb-16 flex justify-between items-center">
-            <a
-                href="/portfolio/"
-                class="text-xl font-bold tracking-tight text-slate-800 hover:text-slate-500 transition-colors shrink-0"
-            >
-                {profileData.hero.name}
-            </a>
-            <nav
-                class="flex items-center gap-4 sm:gap-6 space-x-6 text-sm font-medium text-slate-600"
-            >
-                <a
-                    href="/portfolio/"
-                    class="hover:text-slate-900 transition-colors">Home</a
-                >
-                <a
-                    href="/portfolio/projects"
-                    class="hover:text-slate-900 transition-colors">Projects</a
-                >
-                <a
-                    href="/portfolio/architecture"
-                    class="hover:text-slate-900 transition-colors"
-                    >Architecture</a
-                >
-                <div class="h-4 w-px bg-slate-200 hidden xs:block"></div>
-
-                <div class="flex items-center gap-4">
-                    <a
-                        href={`mailto:${profileData.contact.email}`}
-                        title="Email Me"
-                        class="hover:text-[#EA4335] transition-colors leading-none"
-                    >
-                        <Icon name="simple-icons:gmail" class="w-5 h-5" />
-                    </a>
-                    <a
-                        href={waUrl}
-                        target="_blank"
-                        title="WhatsApp Me"
-                        class="hover:text-[#25D366] transition-colors leading-none"
-                    >
-                        <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
-                    </a>
-                </div>
-            </nav>
-        </header>
+        <Header />
 
         <main class="grow">
             <article class="prose prose-slate lg:prose-xl dark:prose-invert">
