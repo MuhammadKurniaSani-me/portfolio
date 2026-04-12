@@ -7,7 +7,7 @@
         "name": "Sani",
         "headline": "Hi, I'm Sani.",
         "avatar": "../assets/photo-profile.webp",
-        "cvUrl": "/portfolio/CV_Muhammad_Kurnia_Sani.pdf",
+        "cvUrl": "https://dpgb1j61mlyva.cloudfront.net/CV_Muhammad_Kurnia_Sani.pdf",
         "bio": "A software engineer focused on building clean, high-performance web applications, machine learning integration, and robust automation."
     },
     "contact": {
