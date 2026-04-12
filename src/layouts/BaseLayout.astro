@@ -64,6 +64,11 @@ const {
                     href="/portfolio/projects"
                     class="hover:text-slate-900 transition-colors">Projects</a
                 >
+                <a
+                    href="/portfolio/architecture"
+                    class="hover:text-slate-900 transition-colors"
+                    >Architecture</a
+                >
                 <div class="h-4 w-px bg-slate-200 hidden xs:block"></div>
 
                 <div class="flex items-center gap-4">
@@ -86,8 +91,10 @@ const {
             </nav>
         </header>
 
-        <main class="flex-grow">
-            <slot />
+        <main class="grow">
+            <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+                <slot />
+            </article>
         </main>
 
         <footer
